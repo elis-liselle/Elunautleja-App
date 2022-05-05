@@ -1,6 +1,6 @@
 # Elunautleja-App
 
-# Arendjad:
+# Arendajad:
 - Airit Simsel
 - Elis-Liselle Soosalu
 
