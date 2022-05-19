@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "993115755570",
+    "project_id": "elunautleja-app",
+    "storage_bucket": "elunautleja-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993115755570:android:bf0adc2081a3431573582b",
+        "android_client_info": {
+          "package_name": "com.soosalu_simsel.elunautleja_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993115755570-d9mug98i4a0jf4eoe4qlf4aqlnsajce6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZzyTk8F0s8enoT5R69vbvX5hfpJhziug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993115755570-d9mug98i4a0jf4eoe4qlf4aqlnsajce6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
