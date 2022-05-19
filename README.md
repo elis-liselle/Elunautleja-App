@@ -32,3 +32,4 @@ Mida te teete homme, et elu oleks ilusam ja stressivabam? Mina ei tea kunagi kuh
 - vali uuesti "Tools" -> "Device Manager" -> paremal avanenud aknas vali enda seade ja käivita
 - Run app (SHIFT + F10)
 - avaneb rakendus logimise vaatega, head kasutamist!
+
