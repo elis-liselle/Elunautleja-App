@@ -33,3 +33,5 @@ Mida te teete homme, et elu oleks ilusam ja stressivabam? Mina ei tea kunagi kuh
 - Run app (SHIFT + F10)
 - avaneb rakendus logimise vaatega, head kasutamist!
 
+# UML diagramm
+![enjoylife drawio](https://user-images.githubusercontent.com/78550774/170506599-c0c10a72-2545-46c3-a99d-cfe2b5f45a8c.svg)
