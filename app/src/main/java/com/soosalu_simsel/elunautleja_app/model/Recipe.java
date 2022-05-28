@@ -1,18 +1,18 @@
 package com.soosalu_simsel.elunautleja_app.model;
 
 public class Recipe {
-    private final String recipeTitle;
-    private final String recipeInfo;
+    private final String title;
+    private final String instructions;
 
-    public Recipe(String recipeTitle, String recipeInfo) {
-        this.recipeTitle = recipeTitle;
-        this.recipeInfo = recipeInfo;
+    public Recipe(String title, String instructions) {
+        this.title = title;
+        this.instructions = instructions;
     }
 
-    public String getRecipeTitle() {
-        return recipeTitle;
+    public String getTitle() {
+        return title;
     }
-    public String getRecipeInfo() {
-        return  recipeInfo;
+    public String getInstructions() {
+        return  instructions;
     }
 }

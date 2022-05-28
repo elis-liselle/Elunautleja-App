@@ -23,6 +23,6 @@ public class RecipeViewModel extends AndroidViewModel{
         }
         public MutableLiveData<ArrayList<Recipe>> getRecipeLiveData() {return recipeLiveData; }
 
-        public void getDayRecipe(String recipes) { recipeRepository.getDayRecipe(recipes); }
+        public void getDayRecipe() { recipeRepository.getDayRecipe(); }
 }
 

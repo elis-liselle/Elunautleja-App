@@ -1,6 +1,9 @@
 package com.soosalu_simsel.elunautleja_app.fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,11 +12,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
-
 import com.soosalu_simsel.elunautleja_app.R;
 import com.soosalu_simsel.elunautleja_app.RecipeAdapter;
 import com.soosalu_simsel.elunautleja_app.viewmodel.RecipeViewModel;
@@ -21,7 +19,6 @@ import com.soosalu_simsel.elunautleja_app.viewmodel.RecipeViewModel;
 
 public class RecipeFragment extends Fragment {
 
-   String recipes;
    private RecipeAdapter recipeAdapter;
 
    @Override
@@ -39,13 +36,9 @@ public class RecipeFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            recipes = getArguments().getString("recipes");
-
-        } else Toast.makeText(getActivity(), "No recipe available", Toast.LENGTH_SHORT).show();
 
         RecipeViewModel recipeViewModel = new ViewModelProvider(this).get(RecipeViewModel.class);
-        recipeViewModel.getDayRecipe(recipes);
+        recipeViewModel.getDayRecipe();
         recipeViewModel.getRecipeLiveData().observe(this, recipes -> recipeAdapter.setRecipeList(recipes));
     }
 }

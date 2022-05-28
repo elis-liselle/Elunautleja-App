@@ -20,14 +20,15 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     @NonNull
     @Override
     public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_app_main_page,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_main,parent,false);
         return new RecipeViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipeList.get(position);
-        holder.recipeTitle.setText(recipe.getRecipeTitle());
+        holder.title.setText(recipe.getTitle());
+        //holder.instructions.setText(recipe.getInstructions());
     }
     public void setRecipeList(final ArrayList<Recipe>recipeList) {this.recipeList = recipeList; notifyDataSetChanged(); }
 
@@ -35,11 +36,13 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     public int getItemCount() { return recipeList.size(); }
 
     static class RecipeViewHolder extends RecyclerView.ViewHolder {
-        private final TextInputEditText recipeTitle;
+        private final TextInputEditText title;
+        //private final TextInputEditText instructions;
 
         public RecipeViewHolder(@NonNull View itemView) {
             super(itemView);
-            recipeTitle = itemView.findViewById(R.id.txtRecipeLayout);
+            title = itemView.findViewById(R.id.txtRecipeLayout);
+            //instructions = itemView.findViewById(R.id.txtRecipeLayout);
         }
     }
 

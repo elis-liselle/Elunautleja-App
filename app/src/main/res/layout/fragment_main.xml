@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraint_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,9 +14,8 @@
         app:helperText="What to eat?"
         app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
         app:helperTextTextColor="@color/purple_700"
-        app:layout_constraintBottom_toBottomOf="@+id/imgWeatherIcon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgWeatherIcon">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtRecipeLayout"
