@@ -23,7 +23,6 @@ public class RecipeRepository {
         this.application = application;
         recipeLiveData = new MutableLiveData<>();
     }
-
     public void getDayRecipe() {
         Ion.with(application)
                 .load(String.format(URL,API_KEY)).asJsonObject()
@@ -32,27 +31,17 @@ public class RecipeRepository {
                     parseResults(result);
                 });
     }
-
     public String removeAbles(String text) {return text.substring(1,text.length()-1); }
 
     private void parseResults(JsonObject result) {
-        JsonObject randomRec = (JsonObject) result.getAsJsonArray("recipes").get(0);
+        JsonObject randomRecipe = (JsonObject) result.getAsJsonArray("recipes").get(0);
 
-        String title = String.valueOf(randomRec.get("title"));
-        String instructions = String.valueOf(randomRec.get("Instructions"));
-
-
-
-        //title
+        String title = String.valueOf(randomRecipe.get("title"));
+        String instructions = String.valueOf(randomRecipe.get("Instructions"));
         //ingredients
-        //summary
-        //instructions
         //image
         recipeLiveData.setValue(arrayList);
-
-
     }
-
     public MutableLiveData<ArrayList<Recipe>> getRecipeLiveData() {
         return recipeLiveData;
     }
