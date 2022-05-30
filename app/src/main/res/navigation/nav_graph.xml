@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -35,16 +38,16 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.soosalu_simsel.elunautleja_app.fragment.MainFragment"
-        android:label="MainFragment" >
-        <action
-            android:id="@+id/action_mainFragment_to_recipeFragment"
-            app:destination="@id/recipeFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/recipeFragment"
         android:name="com.soosalu_simsel.elunautleja_app.fragment.RecipeFragment"
         android:label="fragment_recipe"
-        tools:layout="@layout/fragment_recipe" />
+        tools:layout="@layout/fragment_recipe" >
+        <action
+            android:id="@+id/action_recipeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.soosalu_simsel.elunautleja_app.fragment.MainFragment"
+        android:label="MainFragment" />
 </navigation>

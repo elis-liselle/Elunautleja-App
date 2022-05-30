@@ -3,12 +3,14 @@ package com.soosalu_simsel.elunautleja_app;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.soosalu_simsel.elunautleja_app.model.Recipe;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -20,7 +22,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     @NonNull
     @Override
     public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_main,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_recipe,parent,false);
         return new RecipeViewHolder(view);
     }
 
@@ -28,7 +30,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipeList.get(position);
         holder.title.setText(recipe.getTitle());
-        //holder.instructions.setText(recipe.getInstructions());
+        holder.ingredients.setText(recipe.getIngredients());
+        holder.instructions.setText(recipe.getInstructions());
+        Picasso.get().load(recipe.getImage()).into(holder.image);
     }
     public void setRecipeList(final ArrayList<Recipe>recipeList) {this.recipeList = recipeList; notifyDataSetChanged(); }
 
@@ -37,12 +41,16 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
     static class RecipeViewHolder extends RecyclerView.ViewHolder {
         private final TextInputEditText title;
-        //private final TextInputEditText instructions;
+        private final TextInputEditText ingredients;
+        private final TextInputEditText instructions;
+        private final ImageView image;
 
         public RecipeViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.txtRecipeLayout);
-            //instructions = itemView.findViewById(R.id.txtRecipeLayout);
+            title = itemView.findViewById(R.id.txtRecipeTitle);
+            ingredients = itemView.findViewById(R.id.txtIngredients);
+            instructions = itemView.findViewById(R.id.txtInstructions);
+            image = itemView.findViewById(R.id.imgRecipeImage);
         }
     }
 

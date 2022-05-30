@@ -1,8 +1,10 @@
 package com.soosalu_simsel.elunautleja_app;
 
 import android.app.Application;
+import android.text.Html;
 import android.util.Log;
 
+import androidx.core.text.HtmlCompat;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.gson.JsonObject;
@@ -27,7 +29,7 @@ public class RecipeRepository {
         Ion.with(application)
                 .load(String.format(URL,API_KEY)).asJsonObject()
                 .setCallback((e, result) -> {
-                    Log.i( "getRandomRecipe",result.getAsJsonPrimitive().toString());
+                    //Log.i( "getRandomRecipe",result.getAsJsonArray("recipes.title").toString());
                     parseResults(result);
                 });
     }
@@ -37,9 +39,13 @@ public class RecipeRepository {
         JsonObject randomRecipe = (JsonObject) result.getAsJsonArray("recipes").get(0);
 
         String title = String.valueOf(randomRecipe.get("title"));
-        String instructions = String.valueOf(randomRecipe.get("Instructions"));
-        //ingredients
-        //image
+        String ingredients = String.valueOf(randomRecipe.get("extendedIngredients.original"));
+        String instructions = String.valueOf(randomRecipe.get("instructions"));
+        String image = String.valueOf(randomRecipe.get("image"));
+
+        Recipe recipe = new Recipe(removeAbles(title), removeAbles(ingredients), Html.fromHtml(instructions, HtmlCompat.FROM_HTML_MODE_LEGACY), image);
+        arrayList.add(recipe);
+
         recipeLiveData.setValue(arrayList);
     }
     public MutableLiveData<ArrayList<Recipe>> getRecipeLiveData() {

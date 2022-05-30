@@ -13,7 +13,7 @@ import com.soosalu_simsel.elunautleja_app.fragment.LoginFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAuth mFirebaseAuth;
+    //private FirebaseAuth mFirebaseAuth;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mFirebaseAuth = FirebaseAuth.getInstance();
+       // mFirebaseAuth = FirebaseAuth.getInstance();
     }
 
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
 
@@ -34,5 +34,5 @@ public class MainActivity extends AppCompatActivity {
         } else {
             startActivity(new Intent(this, LoginFragment.class));
         }
-    }
+    }*/
 }
