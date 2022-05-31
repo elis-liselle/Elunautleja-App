@@ -62,6 +62,11 @@ public class LoginFragment extends Fragment {
             Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment);
         });
 
+        //Register button click handler
+        view.findViewById(R.id.btnDiscover).setOnClickListener(view1 -> {
+            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_mainFragment);
+        });
+
         return view;
     }
 }
