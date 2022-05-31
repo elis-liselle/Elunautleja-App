@@ -24,6 +24,8 @@ public class RecipeFragment extends Fragment {
    @Override
    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.fragment_recipe, container, false);
+       //changing the menu bar title
+       requireActivity().setTitle(getString(R.string.recipe));
        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_recipe);
        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
        recyclerView.setHasFixedSize(true);

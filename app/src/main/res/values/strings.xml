@@ -10,6 +10,8 @@
     <string name="enter_password">Enter password</string>
     <string name="ex_password">qwerty123</string>
     <string name="login">Login</string>
+    <string name="recipe">What to eat?</string>
+    <string name="main">Welcome!</string>
     <string name="nur">New user registration</string>
     <string name="reg_user">Register user</string>
     <string name="user_info">User details</string>

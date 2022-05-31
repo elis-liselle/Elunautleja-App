@@ -30,7 +30,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipeList.get(position);
         holder.title.setText(recipe.getTitle());
-        holder.ingredients.setText(recipe.getIngredients());
+        holder.timeInMinutes.setText(recipe.getReadyInMinutes());
+        holder.servings.setText(recipe.getServings());
+        holder.sourceUrl.setText(recipe.getSourceUrl());
         holder.instructions.setText(recipe.getInstructions());
         Picasso.get().load(recipe.getImage()).into(holder.image);
     }
@@ -41,14 +43,18 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
     static class RecipeViewHolder extends RecyclerView.ViewHolder {
         private final TextInputEditText title;
-        private final TextInputEditText ingredients;
+        private final TextInputEditText timeInMinutes;
+        private final TextInputEditText servings;
+        private final TextInputEditText sourceUrl;
         private final TextInputEditText instructions;
         private final ImageView image;
 
         public RecipeViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.txtRecipeTitle);
-            ingredients = itemView.findViewById(R.id.txtIngredients);
+            timeInMinutes = itemView.findViewById(R.id.txtTimeRecipe);
+            servings = itemView.findViewById(R.id.txtServings);
+            sourceUrl = itemView.findViewById(R.id.txtSourceUrl);
             instructions = itemView.findViewById(R.id.txtInstructions);
             image = itemView.findViewById(R.id.imgRecipeImage);
         }

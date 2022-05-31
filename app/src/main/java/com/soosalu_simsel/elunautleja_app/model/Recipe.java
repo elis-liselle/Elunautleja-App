@@ -4,13 +4,17 @@ import android.text.Spanned;
 
 public class Recipe {
     private final String title;
-    private final String ingredients;
+    private final String readyInMinutes;
+    private final String servings;
+    private final String sourceUrl;
     private final Spanned instructions;
     private final String image;
 
-    public Recipe(String title, String ingredients, Spanned instructions, String image) {
+    public Recipe(String title, String readyInMinutes, String servings, String sourceUrl, Spanned instructions, String image) {
         this.title = title;
-        this.ingredients = ingredients;
+        this.readyInMinutes = readyInMinutes;
+        this.servings = servings;
+        this.sourceUrl = sourceUrl;
         this.instructions = instructions;
         this.image = image;
 
@@ -19,7 +23,9 @@ public class Recipe {
     public String getTitle() {
         return title;
     }
-    public String getIngredients() { return ingredients; }
+    public String getReadyInMinutes() { return readyInMinutes; }
+    public String getServings() { return servings; }
+    public String getSourceUrl() { return sourceUrl; }
     public Spanned getInstructions() {
         return  instructions;
     }

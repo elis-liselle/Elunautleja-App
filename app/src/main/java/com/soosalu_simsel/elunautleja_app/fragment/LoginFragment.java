@@ -32,7 +32,6 @@ public class LoginFragment extends Fragment {
             if (firebaseUser != null){
                 if (getView() != null) Navigation.findNavController(getView())
                         .navigate(R.id.action_loginFragment_to_userFragment);
-                                        //.navigate(R.id.action_loginFragment_to_mainFragment);
             }
         });
     }
@@ -63,8 +62,9 @@ public class LoginFragment extends Fragment {
             Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment);
         });
 
-        view.findViewById(R.id.btnLogin).setOnClickListener(view1 -> {
-            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_recipeFragment);
+        //Register button click handler
+        view.findViewById(R.id.btnDiscover).setOnClickListener(view1 -> {
+            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_mainFragment);
         });
 
         return view;

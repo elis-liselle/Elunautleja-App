@@ -106,6 +106,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtRecipeLayout" />
 
+        <Button
+            android:id="@+id/btnDiscover"
+            android:layout_width="144dp"
+            android:layout_height="47dp"
+            android:text="Discover"
+            app:layout_constraintBottom_toTopOf="@+id/btnRegisterUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRecipeLayout" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

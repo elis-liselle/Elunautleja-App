@@ -39,11 +39,13 @@ public class RecipeRepository {
         JsonObject randomRecipe = (JsonObject) result.getAsJsonArray("recipes").get(0);
 
         String title = String.valueOf(randomRecipe.get("title"));
-        String ingredients = String.valueOf(randomRecipe.get("extendedIngredients.original"));
+        String readyInMinutes = randomRecipe.get("readyInMinutes").toString();
+        String servings = randomRecipe.get("servings").toString();
+        String sourceUrl = String.valueOf(randomRecipe.get("sourceUrl"));
         String instructions = String.valueOf(randomRecipe.get("instructions"));
         String image = String.valueOf(randomRecipe.get("image"));
 
-        Recipe recipe = new Recipe(removeAbles(title), removeAbles(ingredients), Html.fromHtml(instructions, HtmlCompat.FROM_HTML_MODE_LEGACY), image);
+        Recipe recipe = new Recipe(removeAbles(title), readyInMinutes, servings, removeAbles(sourceUrl), Html.fromHtml(removeAbles(instructions), HtmlCompat.FROM_HTML_MODE_LEGACY), removeAbles(image));
         arrayList.add(recipe);
 
         recipeLiveData.setValue(arrayList);
