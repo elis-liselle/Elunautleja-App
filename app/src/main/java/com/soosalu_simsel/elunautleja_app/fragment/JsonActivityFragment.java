@@ -5,8 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +18,7 @@ import com.soosalu_simsel.elunautleja_app.utils.Utils;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 public class JsonActivityFragment extends Fragment {
 
@@ -46,16 +47,22 @@ public class JsonActivityFragment extends Fragment {
         Iterator iterator = activities.iterator();
         while (iterator.hasNext()){
             JsonActivity jsonActivity = (JsonActivity) iterator.next();
-            Button jsonButtons = new Button(getContext());
+            //Button jsonButtons = new Button(getContext());
+            String[] toDo = {jsonActivity.getToDo()};
+            Random r = new Random();
+            int randomNumber = r.nextInt(toDo.length);
 
-            //TextView txtJsonActivity = new TextView(getContext());
-            String toDo = jsonActivity.getToDo();
+
+
+            TextView txtJsonActivity = new TextView(getContext());
+            //String toDo = jsonActivity.getToDo();
+            txtJsonActivity.setText(toDo[randomNumber]);
             //txtJsonActivity.setText(toDo);
-            jsonButtons.setText(toDo);
+            //jsonButtons.setText(toDo);
 
 
-            //linearLayout.addView(txtJsonActivity);
-            linearLayout.addView(jsonButtons);
+            linearLayout.addView(txtJsonActivity);
+            //linearLayout.addView(jsonButtons);
 
         }
         return view;
