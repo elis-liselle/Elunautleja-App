@@ -14,8 +14,11 @@ import androidx.fragment.app.Fragment;
 
 import com.soosalu_simsel.elunautleja_app.R;
 import com.soosalu_simsel.elunautleja_app.model.JsonActivity;
+import com.soosalu_simsel.elunautleja_app.model.Movie;
+import com.soosalu_simsel.elunautleja_app.model.Recipe;
 import com.soosalu_simsel.elunautleja_app.utils.Utils;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -25,13 +28,10 @@ public class JsonActivityFragment extends Fragment {
     private Utils utils = new Utils();
     private List activities;
 
-
-   @Override
+    @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.fragment_json_activity);
     }
-
 
     @Nullable
     @Override
@@ -45,27 +45,18 @@ public class JsonActivityFragment extends Fragment {
         activities = utils.getToDosFromJsonFile(getContext(), "activities.json");
 
         Iterator iterator = activities.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             JsonActivity jsonActivity = (JsonActivity) iterator.next();
-            //Button jsonButtons = new Button(getContext());
             String[] toDo = {jsonActivity.getToDo()};
             Random r = new Random();
             int randomNumber = r.nextInt(toDo.length);
 
 
-
             TextView txtJsonActivity = new TextView(getContext());
-            //String toDo = jsonActivity.getToDo();
             txtJsonActivity.setText(toDo[randomNumber]);
-            //txtJsonActivity.setText(toDo);
-            //jsonButtons.setText(toDo);
-
 
             linearLayout.addView(txtJsonActivity);
-            //linearLayout.addView(jsonButtons);
-
         }
         return view;
-
     }
 }
