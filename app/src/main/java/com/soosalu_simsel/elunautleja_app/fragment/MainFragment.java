@@ -26,13 +26,18 @@ public class MainFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main,container,false);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
         setHasOptionsMenu(true);
         requireActivity().setTitle(getString(R.string.main));
 
         view.findViewById(R.id.btnRecipe).setOnClickListener(view1 -> {
-         Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_recipeFragment);
+            Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_recipeFragment);
         });
+
+        view.findViewById(R.id.btnMovie).setOnClickListener(view1 -> {
+            Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_movieFragment);
+        });
+
 
         return view;
     }
