@@ -10,12 +10,23 @@
         android:id="@+id/btnRecipe"
         android:layout_width="338dp"
         android:layout_height="55dp"
+        android:layout_marginTop="28dp"
         android:text="What to eat?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnMovie"
+        android:layout_width="338dp"
+        android:layout_height="55dp"
+        android:text="Enjoy a Movie!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRecipe"
+        app:layout_constraintVertical_bias="0.05" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
