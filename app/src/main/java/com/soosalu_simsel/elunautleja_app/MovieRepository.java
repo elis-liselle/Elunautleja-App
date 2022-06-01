@@ -38,8 +38,9 @@ public class MovieRepository {
         String title = String.valueOf(movieData.get("title"));
         String overview = String.valueOf(movieData.get("overview"));
         String image = String.valueOf(movieData.get("poster_path"));
+        String imageUrl = "https://image.tmdb.org/t/p/w500" + removeAbles(image);
 
-        Movie movie = new Movie(removeAbles(title), removeAbles(overview), removeAbles(image));
+        Movie movie = new Movie(removeAbles(title), removeAbles(overview), imageUrl);
         arrayList.add(movie);
 
         movieLiveData.setValue(arrayList);

@@ -6,66 +6,73 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="209dp" />
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:helperText="Movie title"
+        app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:helperTextTextColor="@color/magenta_700"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtMovieTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textColor="#101010"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
         android:id="@+id/imgMoviePoster"
-        android:layout_width="0dp"
-        android:layout_height="255dp"
+        android:layout_width="135dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         tools:srcCompat="@tools:sample/avatars" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textInputLayout3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="72dp"
-        app:helperText="Title"
-        app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:helperTextTextColor="@color/magenta_700"
-        app:hintEnabled="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgMoviePoster">
-
-        <View
-            android:id="@+id/txtMovieTitle"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_weight="1" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="155dp"
+        android:layout_width="367dp"
+        android:layout_height="173dp"
+        android:layout_marginTop="60dp"
         app:helperText="Overview"
         app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:helperTextTextColor="@color/magenta_700"
-        app:hintEnabled="false"
+        app:helperTextTextColor="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.855">
+        app:layout_constraintTop_toBottomOf="@+id/imgMoviePoster"
+        app:layout_constraintVertical_bias="0.0">
 
-        <View
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtOverview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_height="114dp"
+            android:enabled="false"
+            android:textColor="#101010"
+            android:textSize="10sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
